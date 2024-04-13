@@ -65,11 +65,11 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [v] Commit: `Implement unsubscribe function in Notification controller.`
     -   [v] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
-    -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
-    -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
-    -   [ ] Commit: `Implement publish function in Program service and Program controller.`
-    -   [ ] Commit: `Edit Product service methods to call notify after create/delete.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
+    -   [v] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
+    -   [v] Commit: `Implement notify function in Notification service to notify each Subscriber.`
+    -   [v] Commit: `Implement publish function in Program service and Program controller.`
+    -   [v] Commit: `Edit Product service methods to call notify after create/delete.`
+    -   [v] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -92,3 +92,9 @@ This is the place for you to write reflections:
 3. Postman berguna untuk menguji aplikasi yang sudah dibuat dan mengecek response sesuai request yang kita buat. Melalui postman, dapat dicek method CRUD nya sehingga dapat melihat data yg diretrieve benar atau tidak.
 
 #### Reflection Publisher-3
+
+1. Yang dipakai adalah push model karena saat terjadi create, delete, atau update pada objek, maka notificcation service akan langsung memanggil method yang mengiterasi semua subscribernya untuk mendapatkan update terbaru.
+
+2.  Jika menggunakan metode pull, maka setiap subscriber harus menentukan sendiri aakah perubahan yang terjadi relevan bagi mereka atau tidak. Keuntungannya adalah subscriber akan menjadi bebas untuk menentukan data apa yang diambil dan kapan. Kerungiannya adalah subscriber menjadi harus mengecek sendiri dan mengetahui struktur dari data sourcenya.
+
+3. Jika tidak multi-threading, maka akan tercipta queue panjang saat notification service perlu menotify yang membuat pengiriman notifikasi ke tiap subscriber menjadi terhambat.
