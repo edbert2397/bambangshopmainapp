@@ -58,12 +58,12 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [v] Commit: `Implement delete function in Subscriber repository.`
     -   [v] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   [v] Commit: `Create Notification service struct skeleton.`
+    -   [v] Commit: `Implement subscribe function in Notification service.`
+    -   [v] Commit: `Implement subscribe function in Notification controller.`
+    -   [v] Commit: `Implement unsubscribe function in Notification service.`
+    -   [v] Commit: `Implement unsubscribe function in Notification controller.`
+    -   [v] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -84,5 +84,11 @@ This is the place for you to write reflections:
 3. Menggunakan Dashmap dibandingkan dengan Hashmap karena dashmap adalah builtin data structure yangmana merupakan hashmap yang cocok untuk multithreading. kita memerlukan dashmap karena aplikasi BambangShop menggunakan multi threading dan Map SUBSCRIBER tersebut akan diakses oleh banyak thread. Singleton berfungsi untuk memastikan agar hanya ada 1 instance dari objek tersebut selama program berjalan. Hal tersebut berfungsi agar daftar subscriber terhadap produk hanya berada pada 1 dashmap.
 
 #### Reflection Publisher-2
+
+1. Salah satu alasan perlu dipisahkan adalah agar menerapkan single responsibility principle. Service berfungsi untuk mengolah data yang didapatkan, sedangkan Repositoy lebih ke berurusan ke database. Pemisahan ini juga agar kode lebih termaintain.
+
+2. Jika hanya menggunakan layer model tersebut, maka nantinya akan terjadi coupling yang tinggi pada program sehingga jika terdapat suatu perubahan, maka kita harus mengubah bagian code yang lain agar dapat berjalan.
+
+3. Postman berguna untuk menguji aplikasi yang sudah dibuat dan mengecek response sesuai request yang kita buat. Melalui postman, dapat dicek method CRUD nya sehingga dapat melihat data yg diretrieve benar atau tidak.
 
 #### Reflection Publisher-3
